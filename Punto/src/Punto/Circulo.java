@@ -1,0 +1,39 @@
+package Punto;
+
+public class Circulo {
+	
+	//atributos
+	private int radio;
+	private Punto punto;
+	
+	//constructor
+	public Circulo(int radio, Punto punto) {
+		this.radio = radio;
+		this.punto = punto;
+	}
+	
+	public int getRadio() {
+		return this.radio;
+	}
+	public Punto getPunto() {
+		return this.punto;
+	}
+	public void setRadio(int radio) {
+		this.radio = radio;
+	}
+	public void setPunto(Punto punto) {
+		this.punto = punto;
+	}
+	public Punto puntoMasCercano(Punto pAux) {
+		double rojo = Math.abs(punto.getX() - pAux.getX());
+		double amarillo = Math.abs(punto.getY() - pAux.getY());
+		double angulo = Math.atan(rojo/amarillo);
+		double incrementoX = radio*Math.cos(angulo);
+		double incrementoY = radio*Math.sin(angulo);
+		Punto puntoResultado = this.punto;
+		puntoResultado.setX(puntoResultado.getX() + incrementoX);
+		puntoResultado.setY(puntoResultado.getY() + incrementoX);
+		return puntoResultado;
+	}
+
+}

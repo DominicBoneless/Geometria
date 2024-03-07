@@ -1,0 +1,29 @@
+package Punto;
+
+public class Circulo {
+	
+	//atributos
+	private int radio;
+	private Punto punto;
+	
+	//constructor
+	public Circulo(int radio, Punto punto) {
+		this.radio = radio;
+		this.punto = punto;
+	}
+	
+	public int getRadio() {
+		return this.radio;
+	}
+	public Punto getPunto() {
+		return this.punto;
+	}
+	public void setRadio(int radio) {
+		this.radio = radio;
+	}
+	public void setPunto(Punto punto) {
+		this.punto = punto;
+	}
+	
+
+}

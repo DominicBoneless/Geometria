@@ -1,0 +1,19 @@
+package Punto;
+
+public class UsaGeometría {
+	
+	public static void main(String[] args) {
+		
+		Punto p1 = new Punto(2,3);
+		Punto p2 = new Punto(4,8);
+		Circulo c1 = new Circulo(3, p1);
+		Circulo c2 = new Circulo(2, p2);
+		
+		System.out.println("La distancia de p1 al centro es: " + p1.getDistanciaCentro());
+		System.out.println("La distancia de p2 al centro es: " + p2.getDistanciaCentro());
+		System.out.println("La distancia")
+	
+	}
+	
+
+}

@@ -4,6 +4,10 @@ public class arraySort {
 	
 	public static void main(String[] args) {
 	
+		//Este valor imprime al final las veces que hizo el cambio de valores
+		int vecesCambiado = 0;
+		int vecesComprobado = 0;
+		boolean haCambiado = true;
 		//El 10 hace que el array sea 10 numeros de largo
 		int array[] = new int[10];
 		System.out.print("Array desordenado: ");
@@ -14,7 +18,8 @@ public class arraySort {
 			System.out.print(array[i] + ", ");
 			}
 		
-		for(int vecesPasado = 0; vecesPasado < array.length;vecesPasado++) {
+		for(int vecesPasado = 0 ; vecesPasado < array.length && haCambiado; vecesPasado++) {
+			haCambiado = false;
 			for(int posicion = 0; posicion < array.length - 1;posicion++) {
 				//Se hace para acordarse de los dos valores
 				int numIzq = array[posicion];
@@ -23,7 +28,13 @@ public class arraySort {
 					//Si el de la izquierda es mas grande ce cambian los dos
 					array[posicion] = numDer;
 					array[posicion + 1] = numIzq;
-				}
+					haCambiado = true;
+					//Y aumenta los veces que ha cambiado los valores
+					vecesCambiado++;
+			    }
+		    }
+			if (haCambiado) {
+				vecesComprobado++;
 			}
 		}
 		System.out.println();
@@ -32,5 +43,8 @@ public class arraySort {
 			//Imprime cada valor del array ordenado
 			System.out.print(array[i] + ", ");
 		}
+		System.out.println();
+		System.out.println("Veces que ha cambiado valores: " + vecesCambiado);
+		System.out.println("Veces que ha pasado por el array: " + vecesComprobado);
 	}	
 }
